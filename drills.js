@@ -195,17 +195,17 @@ function mazeSolverAll(maze, y = 0, x = 0) {
 
 //#10
 function anagram(str) {
-  if(str.length < 1) return [];
-  if(str.length === 1) return [str[0]]
+  if (str.length < 1) return [];
+  if (str.length === 1) return [str[0]];
 
   let anagrams = [];
-  for(let i=0; i<str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     let rest = [...str];
     let character = rest[i];
-    rest.splice(i , 1);
+    rest.splice(i, 1);
 
     let foo = anagram(rest);
-    for(let index in foo) {
+    for (let index in foo) {
       anagrams.push(character + foo[index]);
     }
   }
@@ -214,7 +214,38 @@ function anagram(str) {
 //console.log(anagram('plate'));
 
 //#11
+let orgChartObj = {
+  Zuckerberg: {
+    Schroepfer: {
+      Bosworth: { Steve: {}, Kyle: {}, Andra: {} },
+      Zhao: { Richie: {}, Sofia: {}, Jen: {} }
+    },
+    Schrage: {
+      VanDyck: { Sabrina: {}, Michelle: {}, Josh: {} },
+      Swain: { Blanch: {}, Tom: {}, Joe: {} }
+    },
+    Sandberg: {
+      Goler: { Eddie: {}, Julie: {}, Annie: {} },
+      Hernandez: { Rowi: {}, Inga: {}, Morgan: {} },
+      Moissinac: { Amy: {}, Chuck: {}, Vinni: {} },
+      Kelley: { Eric: {}, Ana: {}, Wes: {} }
+    }
+  }
+};
 
+/*
+  for each key in object, print the key and call again
+*/
+
+function printOrgChart(org, depth = 0) {
+  const spacer = ' '.repeat(depth * 4);
+
+  const keys = Object.keys(org);
+  keys.forEach(key => {
+    console.log(spacer + key);
+    printOrgChart(org[key], depth + 1);
+  });
+}
 
 //#12
 function binaryRep(num) {
