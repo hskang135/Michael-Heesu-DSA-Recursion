@@ -32,8 +32,8 @@ function trianglar(n) {
   if (n === 1) return 1;
   return n + trianglar(n - 1);
 }
-//console.log(trianglar(7));
 
+//#5
 function split(str, sep) {
   let index = str.indexOf(sep);
   if (index === -1) {
@@ -51,4 +51,43 @@ function split(str, sep) {
 //['20', ...['2020']] = ['20', '2020']
 //['02', ... ['20', '2020']] = ['02', '20', '2020']
 
-console.log(split('02/20/2020', '/'));
+//#6
+function fibonacci(n) {
+  if(n <= 0) return 0;
+  if(n <= 2) return 1;
+  return fibonacci(n-1) + fibonacci(n-2);
+}
+//console.log(fibonacci(9));
+
+//#7
+function factorial(n) {
+  if(n === 0) return 1;
+  return n * factorial(n - 1);
+}
+//console.log(factorial(3));
+
+//#8
+
+
+//#9
+
+
+//#10
+
+
+//#11
+
+
+//#12
+function binaryRep(num) {
+  if(num <= 0) return '';
+
+  let binary = num % 2;
+  return binaryRep(Math.floor(num / 2)) + binary;
+}
+
+// binaryRep(3) 
+//   binaryRep(1) + 1   1 + 1 = 11
+//     binaryRep() + 1   '' + 1 = 1
+
+
