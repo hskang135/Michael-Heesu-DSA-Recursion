@@ -124,6 +124,7 @@ let maze = [
 ];
 // console.log(`path to the exit in small maze: ${mazeSolver(mySmallMaze)}`);
 // console.log(`path to the exit in large mage: ${mazeSolver(maze)}`);
+
 /*
 maze solver: maze, x, y (0,0 top left corner, increasing down/right)
 take maze and location
@@ -137,8 +138,8 @@ etc (try down, left)
 if nothing works return false
 
 for maze solver all...return array of possibilities?  
-
 */
+
 //#9
 function mazeSolverAll(maze, y = 0, x = 0) {
   if (maze[y][x] === 'e') return ['']; //found the exit
@@ -190,9 +191,29 @@ function mazeSolverAll(maze, y = 0, x = 0) {
 }
 // let mazePaths = mazeSolverAll(maze);
 // mazePaths.map(path => console.log(`Path to the exit: ${path}`));
+
 //#10
+function anagram(str) {
+  if(str.length < 1) return [];
+  if(str.length === 1) return [str[0]]
+
+  let anagrams = [];
+  for(let i=0; i<str.length; i++) {
+    let rest = [...str];
+    let character = rest[i];
+    rest.splice(i , 1);
+
+    let foo = anagram(rest);
+    for(let index in foo) {
+      anagrams.push(character + foo[index]);
+    }
+  }
+  return anagrams;
+}
+//console.log(anagram('plate'));
 
 //#11
+
 
 //#12
 function binaryRep(num) {
