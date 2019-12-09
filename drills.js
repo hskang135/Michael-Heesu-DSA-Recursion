@@ -128,7 +128,8 @@ let maze = [
 /*
 maze solver: maze, x, y (0,0 top left corner, increasing down/right)
 take maze and location
-copy maze but change location to * to mark as blocked (since already visited) (maybe some other character to mark as already visited? don't think it's necessary)
+copy maze but change location to * to mark as blocked (since already visited) 
+(maybe some other character to mark as already visited? don't think it's necessary)
 try:
 can I go up?  maze solver (new maze, x, y - 1), if that works, return U + string from maze solver
 if can't go up or maze solver returns false, try right
